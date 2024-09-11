@@ -1,15 +1,43 @@
 /* ส่วนหัวข้อออ */
 header {
   background-color: #ffffff;
-  padding: 5px;
+  padding: 10px;
   /* text-align: center; */
   font-size: 35px;
-  color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* padding: 10px; */
+    margin-left: 10px;
+}
+.logo-container img{
+    max-width: 100%;
+    height: auto;
+}
+.logo-container{
+    /* margin-left: auto; */
+    display: flex;
+    align-items: center;
+}
+
 .menu-toggle {
-    display: inline-block;
+    /* display: flex; */
     cursor: pointer;
     padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .menu-toggle div{
     width: 30px;
@@ -62,7 +90,7 @@ section {
 /* Style ของเมนู menu */
 /* The side navigation menu */
 .sidebar {
-  /* margin: 0; */
+  margin: 0;
   padding: 0;
   width: 250px;
   /* background-color: #f1f1f1; */
@@ -74,14 +102,21 @@ section {
   left: 0;
   transition: width 0.3s;
 }
+.sidebar-text {
+    transition: opacity 0.3s;
+}
 .sidebar.collapsed {
-    width: 80px;
+    width: 60px;
+    /* transform: translateX(-250px); */
 }
 /* .sidebar.collapsed a {
     text-align: center;
 } */
 .sidebar.collapsed a span{
     display: none;
+}
+.sidebar.collapsed i {
+    font-size: 24px;
 }
 
 .sidebar i {
@@ -92,7 +127,9 @@ section {
 
 /* Sidebar links */
 .sidebar a {
-  display: block;
+  display: flex;
+  display: black;
+  align-items: center;
   color: black;
   /* padding: 16px; */
   padding: 10px 15px;
@@ -114,10 +151,11 @@ section {
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 260px;
+  margin-left: 250px;
   /* padding: 1px 16px; */
+  margin-top: 60px;
   padding: 20px;
-  height: 1000px;
+  height: 100%;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -183,7 +221,9 @@ input[type="submit"] {
 }
 
 .button-container {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
 }
 
 .button-container button {
@@ -279,8 +319,7 @@ table {
   border: 1px solid #ddd;
 }
 
-th,
-td {
+th, td {
   text-align: left;
   padding: 16px;
 }
