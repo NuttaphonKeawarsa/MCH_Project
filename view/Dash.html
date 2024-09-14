@@ -35,20 +35,25 @@
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div> -->
+
+                <!-- The sidebar -->
+                <div id="layout" class="d-flex ">
+                    <div class="sidebar">
+                        <a class="active" href="#home"><i class="uil uil-user"></i><span>Home</span></a>
+                        <a href="#"><i class="uil uil-user"></i><span
+                                class="sidebar-text">ขอสิทธิการใช้งานระบบ</span></a>
+                        <a href="#"><i class="uil uil-user"></i><span class="sidebar-text">Status</span></a>
+                        <a href="#"><i class="uil uil-user"></i><span class="sidebar-text">Report</span></a>
+                    </div>
+                </div>
             </div>
     </div>
     </header>
 
-    <!-- The sidebar -->
-    <div class="sidebar">
-        <a class="active" href="#home"><i class="uil uil-user"></i><span>Home</span></a>
-        <a href="#"><i class="uil uil-user"></i><span class="sidebar-text">ขอสิทธิการใช้งานระบบ</span></a>
-        <a href="#"><i class="uil uil-user"></i><span class="sidebar-text">Status</span></a>
-        <a href="#"><i class="uil uil-user"></i><span class="sidebar-text">Report</span></a>
-    </div>
+
 
     <!-- Page content -->
-    <div class="mx-auto">
+    <div class="main-content">
         <div class="content">
             <h4 style="padding-bottom: 5px;">รายการคำขอใช้ระบบหน่วยงานหลัก</h4>
             <div class="container">
@@ -129,10 +134,8 @@
                         </tr>
                     </table>
                 </div>
-
             </div>
         </div>
-
     </div>
     </div>
 </body>
@@ -142,11 +145,28 @@
         x.classList.toggle("change");
     }
 </script> -->
-<script>
+<!-- <script>
     function toggleSidebar() {
         document.querySelector('.sidebar').classList.toggle('collapsed');
         document.querySelector('.menu-toggle').classList.toggle('active');
     }
+</script> -->
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.getElementById("menu-toggle");
+        const mainContent = document.querySelector(".main-content")
+        // sidebar.classList.toggle('collapsed');
+
+        sidebar.classList.toggle("Show");
+
+        menuToggle.classList.toggle("change");
+
+        mainContent.classList.toggle("expanded");
+
+    }
+
+
 </script>
 <script src="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 

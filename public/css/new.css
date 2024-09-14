@@ -13,6 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  height: 80px;
 }
 .header-container {
     display: flex;
@@ -40,20 +41,20 @@ header {
     align-items: center;
 }
 .menu-toggle div{
-    width: 30px;
-    height: 3px;
+    width: 35px;
+    height: 4px;
     background-color: #333;
-    margin: 5px 0;
-    transition: 0.3s;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 .menu-toggle.active .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-7px, 7px);
 }
 .menu-toggle.active .bar2{
     opacity: 0;
 }
 .menu-toggle.active .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-7px, -7px);
 }
 
 
@@ -87,26 +88,34 @@ section {
   display: flex;
 }
 
+
+/* #layout {
+  display: flex;
+  display: ;
+  height: 100vh;
+  transition: all 0.3 ease;
+} */
 /* Style ของเมนู menu */
 /* The side navigation menu */
 .sidebar {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding-top: 40px; */
   width: 250px;
   /* background-color: #f1f1f1; */
   background: linear-gradient(to bottom right, #e74c3c, #f39c12);
   position: fixed;
   height: 100%;
-  overflow: auto;
-  /* top: 0; */
+  overflow: hidden;
+  top: 100px;
   left: 0;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 .sidebar-text {
     transition: opacity 0.3s;
 }
 .sidebar.collapsed {
     width: 60px;
+    /* transition: width 0.3s; */
     /* transform: translateX(-250px); */
 }
 /* .sidebar.collapsed a {
@@ -149,13 +158,36 @@ section {
   color: white;
 }
 
+.main-content {
+  /* margin-left: 0px; */
+  flex-grow: 1;
+  transition: margin-left 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  /* margin-left: 0; */
+}
+.main-content.expanded {
+  margin-left: 0;
+}
+.sidebar.collapsed ~ .main-content {
+  margin-left: 60px;
+}
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 250px;
+  margin-left: 240px;
   /* padding: 1px 16px; */
   margin-top: 60px;
   padding: 20px;
   height: 100%;
+  transition: margin-left 0.3s;
+  /* top: 100px; */
+}
+.container.expanded {
+  margin-left: 60px;
+  transition: margin-left 0.3s;
+}
+h4 {
+  font-size: 20px;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
