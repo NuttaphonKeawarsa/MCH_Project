@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  padding: 0;
+}
+.container-fluid {
+  margin: 0;
+  padding: 0;
 }
 
 /* Menu-toggle */
@@ -27,42 +32,50 @@ body {
   padding-top: 15px;
 }
 
+.flex-container {
+  display: flex; /* ใช้ Flexbox layout */
+  height: calc(100vh - 120px); /* ความสูงของ flex container */
+  overflow: hidden; /* ป้องกันการเลื่อนที่ไม่ต้องการ */
+}
+
 /* Sidebar */
-.sidebar {
-  position: fixed;
-  width: 250px;
-  /* height: 100%; */
+.sidebar {  
+  align-items: center; /* จัดตำแหน่งแนวตั้ง */
+  width: 380px; /* ปรับขนาด Sidebar */
   background-color: #343a40;
   padding-top: 20px;
   transition: all 0.3s ease;
-
-  height: calc(100vh - 120px); /* Sidebar เต็มหน้าจอ */
-  z-index: 1000;
-  border-radius: 0 15px 0 15px; /* ขอบมน (บนซ้าย, บนขวา, ล่างซ้าย, ล่างขวา) */
+  z-index: 1000; /* ให้ Sidebar อยู่เหนือเนื้อหาอื่น */
 }
 .sidebar.show {
   transform: translateX(0);
 }
 
 .sidebar a {
-  display: block;
+  display: flex;
   padding: 10px 15px;
   text-decoration: none;
   color: #fff;
-
   font-size: 25px;
   align-items: center;
+  margin-bottom: 10px; /* เพิ่มช่องว่างระหว่างลิงก์แต่ละบรรทัด */
+}
+/* เมื่อเลื่อนเมาส์ไปที่ลิงก์ใน Sidebar */
+.sidebar a:hover {
+  background-color: #00effe; /* เปลี่ยนสีพื้นหลังเมื่อ Hover */
+  color: #000; /* เปลี่ยนสีตัวอักษรเมื่อ Hover */
 }
 
 /* ขยับเฉพาะ text ให้ห่างจาก icon */
 .sidebar a .sidebar-text {
   flex-grow: 1; /* ขยับ text ไปทางขวาสุด */
-  margin-left: 10px;
+  margin-left: 25px; /* ระยะห่างจากไอคอน */
   text-align: left;
 }
 
+/* Sidebar เมื่อย่อ */
 .sidebar.collapsed {
-  width: 80px;
+  width: 0 0 80px; /* ปรับความกว้างของ Sidebar */
 }
 .sidebar.collapsed .sidebar-text {
   display: none; /* ซ่อนข้อความเมื่อ Sidebar ถูกย่อ */
@@ -77,13 +90,14 @@ body {
 
 /* Main Content */
 .main-content {
-  margin-left: 250px; /* Default margin when sidebar is expanded */
   padding: 20px;
   transition: all 0.3s ease;
+  background-color: #9b9b9b; /* กำหนดสีพื้นหลัง */
+  flex: 1; /* ขยายให้เต็มพื้นที่ที่เหลือ */
 }
 
 .sidebar.collapsed ~ .main-content {
-  margin-left: 80px;
+  margin-left: 80px; /* ปรับ margin-left ให้เหมาะสมเมื่อ Sidebar ถูกยุบ */
 }
 
 .main-content.shifted {
@@ -93,18 +107,15 @@ body {
 /* Media Query: ย่อ Sidebar เมื่อหน้าจอแคบ */
 @media (max-width: 768px) {
   .sidebar {
-    width: 80px; /* ย่อ Sidebar ให้เหลือไอคอนอย่างเดียว */
+    width: 80px; /* ย่อ Sidebar ให้เหลือไอคอนอย่างเดียว */ /* ขนาด Sidebar ที่แคบลง */
   }
 
   .sidebar .sidebar-text {
     display: none; /* ซ่อนข้อความใน Sidebar */
   }
 
-  .sidebar a {
-    justify-content: center; /* ไอคอนอยู่ตรงกลาง */
+  .main-content {
+    margin-left: 80px; /* ปรับ margin-left ให้เหมาะสมเมื่อ Sidebar แคบลง */
   }
 
-  .main-content {
-    margin-left: 80px;
-  }
 }

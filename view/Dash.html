@@ -29,9 +29,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="flex-container d-flex">
                 <!-- Sidebar -->
-                <div class="col-md-3 sidebar" id="sidebar">
+                <div class="sidebar" id="sidebar">
                     <a class="#" href="#home">
                         <i class="uil uil-user"></i>
                         <span class="sidebar-text">Home</span>
@@ -54,6 +54,7 @@
                 <!-- Main content -->
                 <div class="main-content" id="main-content">
                     <h1>Hello world</h1>
+                    <p>this is website</p>
                 </div>
             </div>
         </div>
@@ -68,10 +69,10 @@
 
             if (sidebar.classList.contains('collapsed')) {
                 sidebar.style.width = "80px"; // ยุบ Sidebar
-                mainContent.style.marginLeft = "80px"; // ปรับเนื้อหาให้ขยับไปทางซ้ายเมื่อ Sidebar ยุบ
+                mainContent.style.marginLeft = "0px"; // ปรับเนื้อหาให้ขยับไปทางซ้ายเมื่อ Sidebar ยุบ
             } else {
                 sidebar.style.width = "380px"; // ขยาย Sidebar
-                mainContent.style.marginLeft = "380px"; // ปรับเนื้อหาให้กลับไปอยู่ในตำแหน่งเดิมเมื่อขยาย Sidebar
+                mainContent.style.marginLeft = "0px"; // ปรับเนื้อหาให้กลับไปอยู่ในตำแหน่งเดิมเมื่อขยาย Sidebar
             }
         }
     </script>
