@@ -19,11 +19,20 @@ body {
   padding-top: 50px;
   cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมาส์ ให้คลิกได้ */
 }
+.bar1,
+.bar2,
+.bar3 {
+  background-color: #970c10;
+}
+
 .menu-toggle div {
   width: 35px;
   height: 4px;
-  background-color: #000;
+  background-color: #0a0a00;
   margin: 6px 0;
+}
+.menu-toggle:hover div {
+  background-color: #ff151c/* สีที่จะเปลี่ยนเมื่อ hover */
 }
 
 /* =================logo================= */
@@ -86,10 +95,10 @@ body {
 }
 
 /* =============Sidebar================== */
-.sidebar {  
+.sidebar {
   align-items: center; /* จัดตำแหน่งแนวตั้ง */
   width: 380px; /* ปรับขนาด Sidebar */
-  background-color: #343a40;
+  background-color: #970c10;
   padding-top: 20px;
   transition: all 0.3s ease;
   z-index: 1000; /* ให้ Sidebar อยู่เหนือเนื้อหาอื่น */
@@ -109,8 +118,12 @@ body {
 }
 /* เมื่อเลื่อนเมาส์ไปที่ลิงก์ใน Sidebar */
 .sidebar a:hover {
-  background-color: #00effe; /* เปลี่ยนสีพื้นหลังเมื่อ Hover */
-  color: #000; /* เปลี่ยนสีตัวอักษรเมื่อ Hover */
+  background-color: #db6b6e; /* เปลี่ยนสีพื้นหลังเมื่อ Hover */
+  color: #fff; /* เปลี่ยนสีตัวอักษรเมื่อ Hover */
+  margin: 10px;
+  border-radius: 15px;
+  border: 1px solid #0a0a00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ขยับเฉพาะ text ให้ห่างจาก icon */
@@ -139,7 +152,7 @@ body {
 .main-content {
   padding: 20px;
   transition: all 0.3s ease;
-  background-color: #9b9b9b; /* กำหนดสีพื้นหลัง */
+  background-color: #dbdbdb; /* กำหนดสีพื้นหลัง */
   flex: 1; /* ขยายให้เต็มพื้นที่ที่เหลือ */
 }
 
@@ -164,5 +177,4 @@ body {
   .main-content {
     margin-left: 80px; /* ปรับ margin-left ให้เหมาะสมเมื่อ Sidebar แคบลง */
   }
-
 }
