@@ -7,14 +7,14 @@ body {
   padding: 0;
 }
 
-/* Menu-toggle */
+/* ==============Menu-toggle============== */
 .header-container {
   display: flex;
   justify-content: flex-start;
   margin-left: 50px;
 }
 
-/* menu-bar */
+/* ==============menu-bar=================== */
 .menu-toggle {
   padding-top: 50px;
   cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมาส์ ให้คลิกได้ */
@@ -26,10 +26,57 @@ body {
   margin: 6px 0;
 }
 
-/* logo */
+/* =================logo================= */
 .logo-container {
   margin-left: 40px;
   padding-top: 15px;
+}
+
+/* ==================Drop down (user) =========== */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+}
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-info {
+  text-align: right;
+}
+.profile-id {
+  font-size: 0.8rem;
+  color: #b02431; /* สีตามตัวอย่าง */
+  margin-bottom: -5px; /* ขยับให้บรรทัดชิดกัน */
+}
+.profile-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+.dropdown-menu {
+  right: auto;
+  left: 0;
+  min-width: 200px; /* กำหนดความกว้างของเมนู */
+}
+.dropdown-item i {
+  margin-right: 10px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+}
+.dropdown-item:hover {
+  background-color: #db6b6e;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.btn {
+  border: none;
+  background-color: #ffffff;
 }
 
 .flex-container {
@@ -38,7 +85,7 @@ body {
   overflow: hidden; /* ป้องกันการเลื่อนที่ไม่ต้องการ */
 }
 
-/* Sidebar */
+/* =============Sidebar================== */
 .sidebar {  
   align-items: center; /* จัดตำแหน่งแนวตั้ง */
   width: 380px; /* ปรับขนาด Sidebar */
@@ -88,7 +135,7 @@ body {
   margin: 0; /* เอาระยะห่างออกเพื่อจัดให้อยู่ตรงกลาง */
 }
 
-/* Main Content */
+/* ===============Main Content================= */
 .main-content {
   padding: 20px;
   transition: all 0.3s ease;
