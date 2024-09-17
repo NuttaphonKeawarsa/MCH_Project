@@ -164,6 +164,9 @@ body {
   margin-left: 100px;
 }
 
+
+
+
 /*----------ค้นหา----------*/
 .search-section {
   padding: 20px;
@@ -202,6 +205,32 @@ body {
   border-radius: 4px;
 }
 
+/* btn รายงานระบบ  รายงานบุคคล */
+.form-button {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.full-width-button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.full-width-button:hover {
+  background-color: #cacaca;
+}
+
+.full-width-button:focus {
+  outline: none;
+  background-color: #cacaca;
+}
+
+/*---Btn ค้นหา ล้าง---*/
 .form-buttons {
   grid-column: span 2;
   display: flex;
@@ -210,10 +239,16 @@ body {
   margin-top: 10px;
 }
 
+.form-buttons report {
+  display: flex;
+  flex-direction: column;
+}
+
 /*---Btn ค้นหา---*/
 .search-button {
   background-color: #007bff;
-  width: 100px;
+  width: 110px;
+  height: 45px;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -233,7 +268,7 @@ body {
 .reset-button {
   background-color: #e0e0e0;
   width: 110px;
-  height: 40;
+  height: 45 px;
   color: black;
   border: none;
   padding: 10px 20px;
@@ -249,7 +284,7 @@ body {
   outline: none;
 }
 
-/*----------ค้นหา(end)----------*/
+/*----------ค้นหา ล้าง(end)----------*/
 
 /*----------ตาราง----------*/
 .table-section {
@@ -286,49 +321,111 @@ body {
   text-align: center;
 }
 
-/*----------btn status----------*/
-.status-button {
-  padding: 5px 10px;
-  width: 80px;
+/*----------btn edit----------*/
+.icon-button {
   border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
+  color: #000;
+  padding: 5px 10px;
 }
 
-.status-button:focus {
+.icon-button :hover {
+  color: #4e4e4e;
+}
+
+#iconbutton {
+  text-align: center;
+}
+
+/*----------btn edit(end)----------*/
+
+/*----------ตาราง(จบ)----------*/
+
+/* Alart */
+.custom-alert {
+  display: none;
+  /* ซ่อนกล่องแจ้งเตือนโดยเริ่มต้น */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* พื้นหลังโปร่งแสง */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* ให้อยู่เหนือเนื้อหาอื่น */
+  display: flex;
+  /* ใช้ flex เพื่อจัดวางให้อยู่กลาง */
+}
+
+.custom-alert-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  /* กำหนดความกว้างให้พอดีกับเนื้อหา */
+}
+
+.custom-alert-content h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.report-details,
+.report-time {
+  margin: 15px 0;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.time-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-field label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.time-field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.confirm-button {
+  background-color: #28a745;
+  /* สีเขียว */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.confirm-button:hover {
+  background-color: #218838;
+  /* สีเมื่อ hover */
+}
+
+.confirm-button:focus {
   outline: none;
 }
 
-.status-button.open {
-  background-color: #28a745;
-}
 
-.status-button.close {
-  background-color: #dc3545;
-}
 
-/* .data-table td {
-  text-align: center;
-  vertical-align: middle;
-} */
-
-.data-table td > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-/*----------btn status(end)----------*/
-
-/*----------ตาราง(จบ)----------*/
 
 /* Media Query: ย่อ Sidebar เมื่อหน้าจอแคบ */
 @media (max-width: 768px) {
