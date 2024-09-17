@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- <link rel="stylesheet" href="/public/css/Dash4.css"> -->
-    <link rel="stylesheet" href="/public/css/Dash.css">
+    <link rel="stylesheet" href="/public/css/DashAdmin.css">
 </head>
 
 <body>
@@ -88,8 +88,48 @@
 
         <!-- Main content -->
         <div class="main-content" id="main-content">
-            <h1>Hello world</h1>
-            <p>this is website</p>
+            <!-- ค้นหา -->
+            <section class="search-section">
+                <p class="search-header"> <i class="fa fa-search"></i> ค้นหาข้อมูล </p>
+                <hr>
+                <form class="search-form"> <label for="system-work">ระบบงาน</label> <input type="text" id="system-work"
+                        name="system-work"> <label for="system-code">รหัสระบบ</label> <input type="text"
+                        id="system-code" name="system-code"> <label for="system-name">ชื่อระบบ</label> <input
+                        type="text" id="system-name" name="system-name">
+                    <div class="form-buttons"> <button type="submit" class="search-button">ค้นหา</button> <button
+                            type="reset" class="reset-button">ล้างข้อมูล</button> </div>
+                </form>
+            </section>
+            <!-- ค้นหา (end) -->
+
+            <!-- ตาราง -->
+            <section class="table-section">
+                <p>แสดง 23 ถึง 23 จากทั้งหมด 23 รายการ</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ระบบงาน</th>
+                            <th>รหัส</th>
+                            <th>ชื่อบทบาท</th>
+                            <th>คำอธิบายบทบาท</th>
+                            <th class="status">สถานะ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>นิติวิชาชีพ</td>
+                            <td>012</td>
+                            <td>นิติวิชาชีพ 1</td>
+                            <td>ระบบบันทึกข้อมูล...</td>
+                            <td><button class="status-button open" onclick="toggleStatus(this)">เปิด</button></td>
+                        </tr>
+                        <!-- เพิ่มแถวอื่น ๆ ตามต้องการ -->
+                    </tbody>
+                </table>
+            </section>
+            <!-- ตาราง (end) -->
         </div>
     </div>
 
@@ -124,6 +164,23 @@
                     dropdownContent.style.display = "block";
                 }
             });
+        }
+
+        // ============= Table =============
+        function toggleMenu() {
+            var menu = document.getElementById("menu"); menu.classList.toggle("active");
+        }
+
+        //---------- btn status ----------
+        function toggleStatus(button) {
+            if (button.classList.contains('open')) {
+                button.classList.remove('open'); button.classList.add('close'); button.textContent = 'ปิด';
+
+            }
+            else {
+                button.classList.remove('close'); button.classList.add('open'); button.textContent = 'เปิด';
+
+            }
         }
     </script>
 
