@@ -10,17 +10,26 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  padding: 0;
 }
 
 .image-section {
   flex: 1;
   /* background: url('https://placehold.co/600x800') no-repeat center center; */
   background-size: cover;
+  min-width: 300px;
+  border-right: 1px solid #ddd;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
 }
 
 .form-section {
@@ -40,7 +49,18 @@ body {
 }
 
 .form-section h1{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    /* text-align: center; */
+}
+
+.form-section form {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9); /* เพิ่มพื้นหลังสีขาวโปร่งใส */
+  padding: 20px;
+  border-radius: 10px; /* เพิ่มมุมโค้งให้กรอบ */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /*เพิ่มเงาให้กรอบ*/
 }
 
 .form-section input{
@@ -49,10 +69,11 @@ body {
     margin: 10px 0;
     border: none;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .form-section button {
-    width: 30%;
+    width: 100%;
     padding: 15px;
     margin: 20px 0;
     border: none;
@@ -67,4 +88,5 @@ body {
     color: white;
     text-decoration: none;
     margin-top: 20px;
+    font-size: 14px;
 }
