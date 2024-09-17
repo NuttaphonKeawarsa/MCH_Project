@@ -17,36 +17,60 @@
 <link rel="stylesheet" href="/public/css/menu.css">
 
 <body>
-    <!-- Navigation-->
-    <div class="container-fluid">
-        <nav class="navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <div class="input-group">
-                        <button class="btn"><i class="fa fa-bars"></i></button>
-                        <img src="/public/css/" alt="Logo" width=" 500" height=" 100"
-                            class="d-inline-block align-text-top">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="input-group">
+                    <div id="main">
+                        <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+                        <h2>Collapsed Sidebar</h2>
+                        <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to
+                            the right.</p>
                     </div>
-                </a>
-                <div class="d-flex">
-                    <div class="">
-                        <a class="" href="#">
-                            <img src="/image/person.png" alt="Avatar Logo" style="width: 60px;" class="rounded-pill">
-                        </a>
-                        <p>64XXXXXXXX</p>
-                        <p>นายข้าว อร่อยเหาะ</p>
+                    <div class="container" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
                     </div>
+                    <img src="/public/img/logo.png" alt="Logo" width=" 500" height=" 100"
+                        class="d-inline-block align-text-top">
                 </div>
+            </a>
+
+            <div class="d-flex">
+                <div class="">
+                    <a class="" href="#">
+                        <img src="/public/img/person.png" alt="Avatar Logo" style="width: 60px;" class="rounded-pill">
+                    </a>
+                </div>
+                <div>
+                    <p>64XXXXXXXX</p>
+                    <p>นายข้าว อร่อยเหาะ</p>
+                </div>
+
             </div>
-        </nav>
-        <!-- Side Bar-->
-        <div class="row">
-            <div class="side spectrum-background">
+        </div>
+    </nav>
+    <!-- Navigation
+    <div class="container-fluid">
+        <header class="header ant-layout-header">
+        </header> -->
+
+    <!-- Side Bar-->
+    <!-- <div class="container"> -->
+    <!-- <div class="side spectrum-background">
                 <a>ขอใช้สิทธิเข้าใช้งาน</a>
                 <h5>Photo of me:</h5>
-            </div>
-            <!-- Main-->
-            <div class="main">
+            </div> -->
+    <!-- <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div> -->
+    <!-- Main-->
+    <!-- <div class="main">
                 <h2>TITLE HEADING</h2>
                 <h5>Title description, Dec 7, 2017</h5>
                 <div class="fakeimg" style="height:200px;">Image</div>
@@ -62,9 +86,27 @@
                 <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco.</p>
-            </div>
+            </div> -->
+    <!-- 
         </div>
-    </div>
+    </div> -->
+
 </body>
+
+<!-- function burger -->
+<!-- <script>
+    // function myFunction(x) {
+    //     x.classList.toggle("change");
+    // }
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>  -->
 
 </html>
