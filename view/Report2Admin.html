@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReportAdmin</title>
+    <link rel="stylesheet" href="/public/css/Report2Admin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ค้นหา -->
+    <section class="search-section">
+        <p class="search-header">ระบบรายงาน </p>
+        <div class="form-button"> <button type="submit" class="report-system full-width-button">รายงานระบบ</button>
+            <button type="submit" class="report-person full-width-button">รายงานบุคคล</button>
+        </div>
+        <hr>
+        <form class="search-form"> <label for="system-work">ชื่อผู้ใช้งาน</label> <input type="text" id="system-work"
+                name="system-work"> <label for="system-code">รหัสผู้ใช้งาน</label> <input type="text" id="system-code"
+                name="system-name">
+                    <div class="form-buttons"> <button type="submit" class="search-button">ค้นหา</button> <button type="reset"
+                    class="reset-button">ล้างข้อมูล</button> </div>
+
+        </form>
+    </section>
+    <!-- ค้นหา (end) -->
+
+    <!-- ตาราง -->
+    <section class="table-section">
+        <p>แสดง 23 ถึง 23 จากทั้งหมด 23 รายการ</p>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>ชื่อผู้ใช้งาน</th>
+                    <th>รหัส</th>
+                    <th>ชื่อบทบาท</th>
+                    <th>คำอธิบายบทบาท</th>
+                    <th class="status">รายงาน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>นายหล่อล่ำ ทดสอบระบบ</td>
+                    <td>64xxxxxxxx</td>
+                    <td>นิติวิชาชีพ 1</td>
+                    <td>ระบบบันทึกข้อมูล...</td>
+                    <td id="iconbutton"> <button class="icon-button" onclick="showCustomAlert()"> <i
+                                class="fas fa-edit"></i> </button>
+                    </td>
+                    <!-- กล่องแจ้งเตือน -->
+                    <div id="custom-alert" class="custom-alert">
+                        <div class="custom-alert-content">
+                            <h3>ขอรายงาน</h3>
+                            <div class="report-details">
+                                <p>ชื่อผู้ใช้งาน : </p>
+                                <p>รหัสผู้ใช้งาน : </p>
+                            </div>
+                            <div class="report-time"> <label>ช่วงเวลา</label>
+                                <div class="time-inputs">
+                                    <div class="time-field"> <label for="from-date">ตั้งแต่</label> <input type="month"
+                                            id="from-date" placeholder="เลือกเดือน"> </div>
+                                    <div class="time-field"> <label for="to-date">ถึง</label> <input type="month"
+                                            id="to-date" placeholder="เลือกเดือน"> </div>
+                                </div>
+                            </div> <button onclick="closeCustomAlert()" class="confirm-button">ยืนยัน</button>
+                        </div>
+                    </div>
+                </tr>
+                <!-- เพิ่มแถวอื่น ๆ ตามต้องการ -->
+            </tbody>
+        </table>
+    </section>
+    <!-- ตาราง (end) -->
+
+
+    <script>
+        closeCustomAlert()
+
+        function toggleMenu() {
+            var menu = document.getElementById("menu"); menu.classList.toggle("active");
+        }
+
+
+        function showCustomAlert() {
+            var alertBox = document.getElementById(
+                "custom-alert"); alertBox.style.display = "flex";
+        }
+        function closeCustomAlert() {
+            var alertBox = document.getElementById(
+                "custom-alert"); alertBox.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
