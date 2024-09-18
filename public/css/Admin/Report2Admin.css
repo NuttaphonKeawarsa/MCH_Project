@@ -1,0 +1,322 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction:
+        column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.menu {
+    list-style: none;
+    display: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color:
+        white;
+    padding: 8px 16px;
+    display: block;
+}
+
+.menu.active {
+    display: block;
+}
+
+@media (min-width: 600px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/*----------ค้นหา----------*/
+.search-section {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.search-header {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.search-header .fa-search {
+    margin-right: 8px;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-form label {
+    padding-right: 10px;
+}
+
+.search-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* btn รายงานระบบ  รายงานบุคคล */
+.form-button {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.full-width-button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.full-width-button:hover {
+    background-color:#cacaca;
+}
+
+.full-width-button:focus {
+    outline: none;
+    background-color:#cacaca;
+}
+
+/*---Btn ค้นหา ล้าง---*/
+.form-buttons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-buttons report {
+    display: flex;
+    flex-direction: column;
+}
+
+/*---Btn ค้นหา---*/
+.search-button {
+    background-color: #007bff;
+    width: 110px;
+    height: 45px;
+    color: white;
+    border: none;
+    padding:10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+/*---Btn ล้าง---*/
+.reset-button {
+    background-color: #e0e0e0;
+    width: 110px;
+    height: 45  px;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor:
+        pointer;
+}
+
+.reset-button:hover {
+    background-color: #d0d0d0;
+}
+
+.reset-button:focus {
+    outline: none;
+}
+
+/*----------ค้นหา ล้าง(end)----------*/
+
+/*----------ตาราง----------*/
+.table-section {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table td {
+    background-color: white;
+    /*border: 1px solid #ddd;*/
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #cacaca;
+    /*border: 1px solid #ddd;*/
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th.status {
+    text-align: center;
+}
+
+/*----------btn edit----------*/
+.icon-button {
+    border: none;
+    background-color: white;
+    color: #000;
+    padding: 5px 10px;
+}
+
+.icon-button :hover {
+    color: #4e4e4e;
+}
+
+#iconbutton {
+    text-align: center;
+}
+
+    /*----------btn edit(end)----------*/
+
+    /*----------ตาราง(จบ)----------*/
+
+    /* Alart */
+.custom-alert {
+    display: none;
+    /* ซ่อนกล่องแจ้งเตือนโดยเริ่มต้น */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* พื้นหลังโปร่งแสง */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* ให้อยู่เหนือเนื้อหาอื่น */
+    display: flex;
+    /* ใช้ flex เพื่อจัดวางให้อยู่กลาง */
+}
+
+.custom-alert-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    /* กำหนดความกว้างให้พอดีกับเนื้อหา */
+}
+
+.custom-alert-content h3 {
+    margin-top:
+        0;
+    font-size: 20px;
+}
+
+.report-details,
+.report-time {  
+    margin: 15px 0;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.time-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time-field label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.time-field input {
+    width: 100%;
+    padding: 8px;
+    border:
+        1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.confirm-button {
+    background-color: #28a745;
+    /* สีเขียว */
+    color:
+        white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.confirm-button:hover {
+    background-color: #218838;
+    /* สีเมื่อ hover */
+}
+
+.confirm-button:focus {
+    outline: none;
+}
