@@ -106,27 +106,6 @@ body {
     background-color: #ffffff;
 }
 
-.btn1 {
-    /* ปุ่มยืนยันของหน้า user */
-    border: none;
-    background-color: #008311;
-    margin-bottom: 3px;
-}
-
-.btn3 {
-    /* ไม่อนุมัติ */
-    border: none;
-    background-color: #ad1a1a;
-    margin-bottom: 3px;
-}
-
-.btn4 {
-    /* อนุมัติ */
-    border: none;
-    background-color: #008311;
-    margin-bottom: 3px;
-}
-
 .flex-container {
     display: flex;
     /* ใช้ Flexbox layout */
@@ -212,8 +191,8 @@ body {
 .main-content {
     padding: 20px;
     transition: all 0.3s ease;
-    background-color: #dbdbdb;
-    /* กำหนดสีพื้นหลัง */
+    background-color: white;
+    /* กำหนดสีพื้นหลัง #dbdbdb*/
     flex: 1;
     /* ขยายให้เต็มพื้นที่ที่เหลือ */
 }
@@ -223,13 +202,202 @@ body {
     /* ปรับ margin-left ให้เหมาะสมเมื่อ Sidebar ถูกยุบ */
 }
 
+/*----------Main content----------*/
 .main-content.shifted {
     margin-left: 100px;
 }
 
+.container {
+    margin-top: 20px;
+}
+
+.btn-red {
+    background-color: #dc3545;
+    /* Red color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: none;
+    /* Remove border */
+    padding: 5px 20px;
+    /* Padding for button size */
+}
+
+.btn-green {
+    background-color: #28a745;
+    /* Green color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: none;
+    /* Remove border */
+    padding: 5px 20px;
+    /* Padding for button size */
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+}
+
+.btn-green:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Space below the header */
+}
+
+.header-section p {
+    margin: 0;
+    /* Remove default margin */
+    font-weight: bold;
+    /* Bold text */
+}
+
+/*-----collapsible-----*/
+
+.active,
+.collapsible:hover {
+    background-color: #E0E0E0;
+}
+
+/*-----collapsible end-----*/
+.color-th {
+    background-color: white;
+    color: black;
+}
+
+.bg-order {
+    background-color: #C0C0C0;
+    color: black;
+}
+
+.bg-table {
+    background-color: #F0F0F0;
+}
+
+.bg-detail {
+    background-color: white;
+}
+
+.card-body {
+    border-radius: 25px 25px 0 0;
+}
 
 
-/* ----------หน้า request จบ-------------- */
+/*-----detail-----*/
+.item-list {
+    padding: 10px;
+    /* Padding around the content */
+    margin-top: 10px;
+    /* Space above the list */
+}
+
+.item-list ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+.item-list li {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: flex-start;
+    /* Center items vertically */
+    margin-bottom: 5px;
+    /* Space between items */
+}
+
+.item-list i {
+    margin-right: 10px;
+    /* Space between icon and text */
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+.item-list p {
+    margin: 0;
+    /* Remove margin from paragraphs */
+}
+
+.numOrder {
+    margin-left: 500px;
+}
+
+/*-----btn-confirm-----*/
+.btn-confirm {
+    background-color: #007bff;
+    /* Blue color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding around the button */
+    position: absolute;
+    /* Absolute positioning */
+    right: 20px;
+    /* Align to the right */
+    bottom: 20px;
+    /* Align to the bottom */
+    border: none;
+    /* Remove border */
+    font-weight: bold;
+    /* Bold text */
+}
+
+.btn-confirm:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.rounded-box {
+    background-color: #F0F0F0;
+    /* Light gray background */
+    border-radius: 25px 25px 0 0;
+    /* Rounded corners */
+    padding: 40px;
+    /* Padding inside the box */
+    position: relative;
+    /* Relative positioning to contain absolute button */
+}
+
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Center vertically */
+    margin-bottom: 10px;
+    /* Space below the header */
+    padding-bottom: 5px;
+    /* Optional: Space below the text */
+}
+
+.header-left {
+    font-weight: bold;
+    /* Bold text for left side */
+    font-size: 16px;
+}
+
+.header-right {
+    font-weight: bold;
+    /* Bold text for left side */
+    font-size: 16px;
+}
+
+
+
+
+/*----------ตาราง(จบ)----------*/
 
 /* Media Query: ย่อ Sidebar เมื่อหน้าจอแคบ */
 @media (max-width: 768px) {
