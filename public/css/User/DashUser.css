@@ -106,6 +106,27 @@ body {
     background-color: #ffffff;
 }
 
+.btn1 {
+    /* ปุ่มยืนยันของหน้า user */
+    border: none;
+    background-color: #008311;
+    margin-bottom: 3px;
+}
+
+.btn3 {
+    /* ไม่อนุมัติ */
+    border: none;
+    background-color: #ad1a1a;
+    margin-bottom: 3px;
+}
+
+.btn4 {
+    /* อนุมัติ */
+    border: none;
+    background-color: #008311;
+    margin-bottom: 3px;
+}
+
 .flex-container {
     display: flex;
     /* ใช้ Flexbox layout */
@@ -338,7 +359,10 @@ body {
     color: white;
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .status-button:focus {
@@ -362,7 +386,29 @@ body {
 
 /*----------btn status(end)----------*/
 
+.table {
+    table-layout: fixed;
+}
+
 /*----------ตาราง(จบ)----------*/
+
+/* ----------หน้า request-------------- */
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.lable {
+    border: 2px solid whitesmoke;
+    padding: 5px;
+    border-radius: 35%;
+}
+
+/* ----------หน้า request จบ-------------- */
 
 /* Media Query: ย่อ Sidebar เมื่อหน้าจอแคบ */
 @media (max-width: 768px) {
