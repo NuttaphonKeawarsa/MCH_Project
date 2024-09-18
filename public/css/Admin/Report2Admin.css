@@ -114,12 +114,12 @@ body {
 }
 
 .full-width-button:hover {
-    background-color:#cacaca;
+    background-color: #cacaca;
 }
 
 .full-width-button:focus {
     outline: none;
-    background-color:#cacaca;
+    background-color: #cacaca;
 }
 
 /*---Btn ค้นหา ล้าง---*/
@@ -143,7 +143,7 @@ body {
     height: 45px;
     color: white;
     border: none;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -161,7 +161,7 @@ body {
 .reset-button {
     background-color: #e0e0e0;
     width: 110px;
-    height: 45  px;
+    height: 45 px;
     color: black;
     border: none;
     padding: 10px 20px;
@@ -231,11 +231,11 @@ body {
     text-align: center;
 }
 
-    /*----------btn edit(end)----------*/
+/*----------btn edit(end)----------*/
 
-    /*----------ตาราง(จบ)----------*/
+/*----------ตาราง(จบ)----------*/
 
-    /* Alart */
+/* Alart */
 .custom-alert {
     display: none;
     /* ซ่อนกล่องแจ้งเตือนโดยเริ่มต้น */
@@ -271,7 +271,7 @@ body {
 }
 
 .report-details,
-.report-time {  
+.report-time {
     margin: 15px 0;
     background-color: #f7f7f7;
     padding: 10px;

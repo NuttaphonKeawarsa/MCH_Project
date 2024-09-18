@@ -239,8 +239,10 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        width: 210mm; /* Full width of A4 */
-        height: 297mm; /* Full height of A4 */
+        width: 210mm;
+        /* Full width of A4 */
+        height: 297mm;
+        /* Full height of A4 */
         margin: 0;
         padding: 0;
         box-shadow: none;
@@ -251,7 +253,8 @@ body {
     .custom-table2,
     .custom-table3,
     .custom-table4 {
-        width: 100% !important; /* Force full width */
+        width: 100% !important;
+        /* Force full width */
         border-collapse: collapse;
         font-size: 11px;
         table-layout: fixed;

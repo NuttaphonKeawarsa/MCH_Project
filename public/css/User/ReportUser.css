@@ -106,27 +106,6 @@ body {
     background-color: #ffffff;
 }
 
-.btn1 {
-    /* ปุ่มยืนยันของหน้า user */
-    border: none;
-    background-color: #008311;
-    margin-bottom: 3px;
-}
-
-.btn3 {
-    /* ไม่อนุมัติ */
-    border: none;
-    background-color: #ad1a1a;
-    margin-bottom: 3px;
-}
-
-.btn4 {
-    /* อนุมัติ */
-    border: none;
-    background-color: #008311;
-    margin-bottom: 3px;
-}
-
 .flex-container {
     display: flex;
     /* ใช้ Flexbox layout */
@@ -212,8 +191,8 @@ body {
 .main-content {
     padding: 20px;
     transition: all 0.3s ease;
-    background-color: #dbdbdb;
-    /* กำหนดสีพื้นหลัง */
+    background-color: white;
+    /* กำหนดสีพื้นหลัง #dbdbdb*/
     flex: 1;
     /* ขยายให้เต็มพื้นที่ที่เหลือ */
 }
@@ -223,192 +202,202 @@ body {
     /* ปรับ margin-left ให้เหมาะสมเมื่อ Sidebar ถูกยุบ */
 }
 
+/*----------Main content----------*/
 .main-content.shifted {
     margin-left: 100px;
 }
 
-/*----------ค้นหา----------*/
-.search-section {
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    margin: 20px;
-    border-radius: 8px;
+.container {
+    margin-top: 20px;
 }
 
-.search-header {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    color: #333;
-    margin: 0 0 10px;
-}
-
-.search-header .fa-search {
-    margin-right: 8px;
-}
-
-.search-form {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10px;
-    align-items: center;
-}
-
-.search-form label {
-    padding-right: 10px;
-}
-
-.search-form input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-buttons {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-/*---Btn ค้นหา---*/
-.search-button {
-    background-color: #007bff;
-    width: 100px;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.search-button:hover {
-    background-color: #0056b3;
-}
-
-.search-button:focus {
-    outline: none;
-}
-
-/*---Btn ล้าง---*/
-.reset-button {
-    background-color: #e0e0e0;
-    width: 110px;
-    height: 40;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.reset-button:hover {
-    background-color: #d0d0d0;
-}
-
-.reset-button:focus {
-    outline: none;
-}
-
-/*----------ค้นหา(end)----------*/
-
-/*----------ตาราง----------*/
-.table-section {
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.data-table td {
-    background-color: white;
-    /*border: 1px solid #ddd;*/
-    border: none;
-    padding: 8px;
-    text-align: left;
-}
-
-.data-table th {
-    background-color: #cacaca;
-    /*border: 1px solid #ddd;*/
-    border: none;
-    padding: 8px;
-    text-align: left;
-}
-
-.data-table th.status {
-    text-align: center;
-}
-
-/*----------btn status----------*/
-.status-button {
-    padding: 5px 10px;
-    width: 80px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.status-button:focus {
-    outline: none;
-}
-
-.status-button.open {
-    background-color: #28a745;
-}
-
-.status-button.close {
+.btn-red {
     background-color: #dc3545;
+    /* Red color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: none;
+    /* Remove border */
+    padding: 5px 20px;
+    /* Padding for button size */
 }
 
-.data-table td>button {
+.btn-green {
+    background-color: #28a745;
+    /* Green color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: none;
+    /* Remove border */
+    padding: 5px 20px;
+    /* Padding for button size */
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+}
+
+.btn-green:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+.header-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: auto;
+    margin-bottom: 10px;
+    /* Space below the header */
 }
 
-/*----------btn status(end)----------*/
-
-.table {
-    table-layout: fixed;
+.header-section p {
+    margin: 0;
+    /* Remove default margin */
+    font-weight: bold;
+    /* Bold text */
 }
 
-/*----------ตาราง(จบ)----------*/
+/*-----collapsible-----*/
 
-/* ----------หน้า request-------------- */
 .active,
 .collapsible:hover {
-    background-color: #555;
+    background-color: #E0E0E0;
 }
 
-.cursor-pointer {
+/*-----collapsible end-----*/
+.color-th {
+    background-color: white;
+    color: black;
+}
+
+.bg-order {
+    background-color: #C0C0C0;
+    color: black;
+}
+
+.bg-table {
+    background-color: #F0F0F0;
+}
+
+.bg-detail {
+    background-color: white;
+}
+
+.card-body {
+    border-radius: 25px 25px 0 0;
+}
+
+
+/*-----detail-----*/
+.item-list {
+    padding: 10px;
+    /* Padding around the content */
+    margin-top: 10px;
+    /* Space above the list */
+}
+
+.item-list ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+.item-list li {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: flex-start;
+    /* Center items vertically */
+    margin-bottom: 5px;
+    /* Space between items */
+}
+
+.item-list i {
+    margin-right: 10px;
+    /* Space between icon and text */
     cursor: pointer;
+    /* Change cursor to pointer */
 }
 
-.lable {
-    border: 2px solid whitesmoke;
-    padding: 5px;
-    border-radius: 35%;
+.item-list p {
+    margin: 0;
+    /* Remove margin from paragraphs */
 }
 
-/* ----------หน้า request จบ-------------- */
+.numOrder {
+    margin-left: 500px;
+}
+
+/*-----btn-confirm-----*/
+.btn-confirm {
+    background-color: #007bff;
+    /* Blue color */
+    color: white;
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding around the button */
+    position: absolute;
+    /* Absolute positioning */
+    right: 20px;
+    /* Align to the right */
+    bottom: 20px;
+    /* Align to the bottom */
+    border: none;
+    /* Remove border */
+    font-weight: bold;
+    /* Bold text */
+}
+
+.btn-confirm:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.rounded-box {
+    background-color: #F0F0F0;
+    /* Light gray background */
+    border-radius: 25px 25px 0 0;
+    /* Rounded corners */
+    padding: 40px;
+    /* Padding inside the box */
+    position: relative;
+    /* Relative positioning to contain absolute button */
+}
+
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Center vertically */
+    margin-bottom: 10px;
+    /* Space below the header */
+    padding-bottom: 5px;
+    /* Optional: Space below the text */
+}
+
+.header-left {
+    font-weight: bold;
+    /* Bold text for left side */
+    font-size: 16px;
+}
+
+.header-right {
+    font-weight: bold;
+    /* Bold text for left side */
+    font-size: 16px;
+}
+
+
+
+
+/*----------ตาราง(จบ)----------*/
 
 /* Media Query: ย่อ Sidebar เมื่อหน้าจอแคบ */
 @media (max-width: 768px) {
