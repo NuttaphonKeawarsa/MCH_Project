@@ -43,13 +43,13 @@
             const username = formLogin.elements['txtUsername'].value;
             const password = formLogin.elements['txtPassword'].value;
 
-            if (!username || !password) {
-                Swal.fire({
-                    "icon": "error",
-                    "title": "กรุณากรอก username และ password"
-                });
-                return;
-            }
+            // if (!username || !password) {
+            //     Swal.fire({
+            //         "icon": "error",
+            //         "title": "กรุณากรอก username และ password"
+            //     });
+            //     return;
+            // }
 
             const options = {
                 method: 'POST',
@@ -61,7 +61,7 @@
 
             fetch('/login', options)
                 .then(function (response) {
-                    if (response.status === 200) {
+                    if (response.ok) {
                         return response.text();
                     }
                     throw Error("Wrong username or password");
@@ -75,12 +75,12 @@
                 .catch(function (error) {
                     Swal.fire({
                         "icon": "error",
-                        "title": error.message
+                        "title": error
                     });
 
                 });
 
-        };
+        }
     </script>
 </body>
 

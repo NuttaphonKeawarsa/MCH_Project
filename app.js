@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+// --------------- bcrypt ---------------
 const bcrypt = require("bcrypt");
 
 const app = express();
@@ -7,7 +8,6 @@ const port = 3000;
 
 // -------database connection--------
 const con = require("./config/db");
-
 
 // app.listen(port, function () {
 //     console.log("sever is ready at " + port);
@@ -44,11 +44,11 @@ app.get("/login", function (req, res) {
 app.post("/login", function (req, res) {
     const username = req.body.username;
     const password = req.body.password;
-    const sql = "SELECT user_id, user_name, password FROM user WHERE user_name = ?";
+    const sql = "SELECT user_id, user_name FROM user WHERE user_name = ? AND password = ?";
 
-    con.query(sql, [username], function (err, results) {
+    con.query(sql, [username, password], function (err, results) {
         if (err) {
-            console.error(err);
+            // console.error(err);
             return res.status(500).send("Database server error");
         }
         if (results.length != 1) {
@@ -56,23 +56,36 @@ app.post("/login", function (req, res) {
         }
         bcrypt.compare(password, results[0].password, function (err, same) {
             if (err) {
-                return res.status(503).send("Authentication server error");
+                res.status(503).send("Authentication sever error");
             }
-            else if (same) {
-                //correct login send destination URL to client
-                res.status(200).send("/dashadmin");
+            else if (same == true) {
+                res.send("/dashadmin");
             }
             else {
-                //wrong password
                 res.status(400).send("Wrong password");
             }
         });
+
+
+        // bcrypt.compare(password, results[0].password, function (err, same) {
+        //     if (err) {
+        //         return res.status(503).send("Authentication server error");
+        //     }
+        //     else if (same) {
+        //         //correct login send destination URL to client
+        //         res.status(200).send("/dashadmin");
+        //     }
+        //     else {
+        //         //wrong password
+        //         res.status(400).send("Wrong password");
+        //     }
+        // });
     });
 });
 
 // --------------- เช็ค Password ----------------
-app.get("/password/:pass/:username", function (req, res) {
-    const username = req.params.username;
+app.get("/password/:pass", function (req, res) {
+    // const username = req.params.username;
     const password = req.params.pass;
     const saltRounds = 10; //the cost of encrypting see https://github.com/ kelektiv / node.bcrypt.js#a - note - on - rounds
 
@@ -80,16 +93,16 @@ app.get("/password/:pass/:username", function (req, res) {
         if (err) {
             return res.status(500).send("Hashing error");
         }
-        const sql = "INSERT INTO user (user_name, password) VALUES (?,?)";
-        con.query(sql, [username, hash], function (err, result) {
-            if (err) {
-                return res.status(500).send("Database insert error");
-            }
-            res.send("User registered successfully");
-        });
-        //return hashed password, 60 characters
+        // const sql = "INSERT INTO user (user_name, password) VALUES (?,?)";
+        // con.query(sql, [username, hash], function (err, result) {
+        //     if (err) {
+        //         return res.status(500).send("Database insert error");
+        //     }
+        //     res.send("User registered successfully");
+        // });
+        // return hashed password, 60 characters
         // console.log(hash.length);
-        // res.send(hash);
+        res.send(hash);
     });
 });
 
