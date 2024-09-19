@@ -58,7 +58,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/view/login.html">
+                                <li><a class="dropdown-item" href="/login">
                                         <i class="fa fa-fw fa-sign-out"></i> Logout </a></li>
                             </ul>
                         </div>
@@ -71,16 +71,16 @@
     <div class="flex-container d-flex">
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
-            <a href="/view/Admin/DashAdmin.html">
+            <a href="/dashadmin">
                 <i class="fa fa-fw fa-address-card"></i>
                 <span class="sidebar-text">ระบบงาน</span>
                 <!-- <span class="sidebar-user">Hello</span> -->
             </a>
-            <a href="/view/Admin/RequestAdmin.html">
+            <a href="/requestadmin">
                 <i class="fa fa-fw fa-bar-chart"></i>
                 <span class="sidebar-text">Request</span>
             </a>
-            <a href="/view/Admin/ReportAdmin.html">
+            <a href="/reportadmin">
                 <i class="fa fa-fw fa-file"></i>
                 <span class="sidebar-text">Report</span>
             </a>
@@ -110,21 +110,21 @@
                         <tr>
                             <th>ลำดับ</th>
                             <th>ระบบงาน</th>
-                            <th>รหัส</th>
-                            <th>ชื่อบทบาท</th>
+                            <th>satus</th>
+                            <!-- <th>ชื่อบทบาท</th>
                             <th>คำอธิบายบทบาท</th>
-                            <th class="status">สถานะ</th>
+                            <th class="status">สถานะ</th> -->
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="ระบบ">
+                        <!-- <tr>
                             <td>1</td>
                             <td>นิติวิชาชีพ</td>
                             <td>012</td>
                             <td>นิติวิชาชีพ 1</td>
                             <td>ระบบบันทึกข้อมูล...</td>
                             <td><button class="status-button open" onclick="toggleStatus(this)">เปิด</button></td>
-                        </tr>
+                        </tr> -->
                         <!-- เพิ่มแถวอื่น ๆ ตามต้องการ -->
                     </tbody>
                 </table>
@@ -185,6 +185,36 @@
     </script>
 
     <script src="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ------------ใน SQL------------------ -->
+    <script>
+        // รับค่าระบบมาทั้งหมด
+        getSystems();
+
+        function getSystems() {
+            fetch('/data')
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw Error('Bad response');
+                })
+                .then(function (data) {
+                    let rows = '';
+                    data.forEach(function (ระบบงานหลัก) {
+                        rows += `<tr><td>${ระบบงานหลัก.system_id}</td>`;
+                        rows += `<td>${ระบบงานหลัก.system_name}</td>`;
+                        rows += `<td>${ระบบงานหลัก.status}</td>`;
+
+                    });
+                    ระบบ.innerHTML = rows;
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    alert(err);
+                });
+        }
+    </script>
 </body>
 
 
